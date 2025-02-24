@@ -1,4 +1,7 @@
 import "./App.css";
+import Code from "./components/Code";
+import Elements from "./components/Elements";
+import Fields from "./components/Fields";
 
 function App() {
   return (
@@ -9,6 +12,12 @@ function App() {
           Build forms without coding for your react application. Just drag and
           drop a field to create a form for your react application.
         </h3>
+
+        <div className="grid grid-cols-3 gap-4">
+          <Elements />
+          <Fields />
+          <Code />
+        </div>
       </div>
     </>
   );
