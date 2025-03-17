@@ -1,9 +1,13 @@
-import React from "react";
 
-type Props = {};
 
-const Fields = (props: Props) => {
-  return <div>Fields</div>;
+
+
+const Fields = () => {
+  return <div className={'bg-white border-1 rounded-md p-4 m-2'}>
+    <div>
+      <h1 className={'text-2xl font-bold'} >Fields</h1>
+    </div>
+  </div>;
 };
 
 export default Fields;
