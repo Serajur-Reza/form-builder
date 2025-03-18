@@ -21,7 +21,7 @@ const Elements = () => {
 
         <div>
             {formElementSidebar.map((formElement, index) => (
-                <SidebarButtonElement key={index} formElement={formElement.element} name={formElement.name} />
+                <SidebarButtonElement key={index} formElement={formElement.element} name={formElement.name} id={formElement.id} code={formElement?.code}/>
             ))}
         </div>
 
