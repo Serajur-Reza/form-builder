@@ -18,7 +18,7 @@ const SidebarButtonElement = (props:Props ) => {
     return (
         <div
             ref={setNodeRef}
-            className={'bg-gray-100 border-1 rounded-md p-4 m-2 cursor-pointer'}
+            className={'bg-gray-100 border-1 rounded-md p-4 m-4 cursor-pointer'}
             style={{...style}}
             {...listeners}
             {...attributes}>
