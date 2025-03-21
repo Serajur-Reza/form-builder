@@ -7,6 +7,7 @@ import { DndContext } from '@dnd-kit/core';
 import {useAppDispatch, useAppSelector} from "./store/hooks.ts";
 import {addElement} from "./store/Form/formSlice.ts";
 
+
 function App() {
     const dispatch = useAppDispatch()
     // const elements = useAppSelector(state => state.form.forms);
@@ -37,7 +38,7 @@ function App() {
                 <div className="grid grid-cols-2 gap-4 m-4">
                     <Elements />
                     <Fields />
-                    {/*<Code />*/}
+
                 </div>
             </div>
         </DndContext>
