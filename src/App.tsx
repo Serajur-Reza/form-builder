@@ -7,6 +7,7 @@ import { closestCenter, DndContext, DragOverlay } from "@dnd-kit/core";
 import { useAppDispatch, useAppSelector } from "./store/hooks.ts";
 import { addElement, reorderElements } from "./store/Form/formSlice.ts";
 import { nanoid } from "@reduxjs/toolkit";
+import { arrayMove } from "@dnd-kit/sortable";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -55,6 +56,7 @@ function App() {
       const oldIndex = elements.findIndex((item) => item.uid === active.id);
       const newIndex = elements.findIndex((item) => item.uid === over.id);
       console.log(oldIndex, newIndex);
+      arrayMove(elements, oldIndex, newIndex);
       dispatch(reorderElements({ oldIndex, newIndex }));
     }
   };
@@ -87,7 +89,7 @@ function App() {
 
                     transform: "scale(1.02)",
                     opacity: 0.9,
-                    cursor: "grabbing",
+                    // cursor: "grabbing",
                   }}
                 >
                   {activeElement?.element}
