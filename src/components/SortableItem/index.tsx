@@ -25,9 +25,9 @@ export const SortableItem = (props) => {
   const style = {
     transform: CSS.Transform.toString(transform),
     transition: transition || "all 0.3s ease",
-    opacity: isDragging ? 0.5 : 1,
-    zIndex: isDragging ? 1 : 0,
-    boxShadow: isDragging ? "0 0 10px rgba(0,0,0,0.3)" : "none",
+    // opacity: isDragging ? 0.5 : 1,
+    // zIndex: isDragging ? 1 : 0,
+    // boxShadow: isDragging ? "0 0 10px rgba(0,0,0,0.3)" : "none",
   };
 
   //   const handleRemove = () => {
@@ -62,12 +62,12 @@ export const SortableItem = (props) => {
       )}
       <div
         className={
-          "col-span-11 border-1 border-dashed rounded-md bg-gray-100  my-4 rounded-md"
+          "col-span-11 border-1 border-dashed rounded-md bg-gray-100  my-4 rounded-md cursor-pointer"
         }
         {...listeners}
-        style={{
-          cursor: "grab",
-        }}
+        // style={{
+        //   cursor: "grab",
+        // }}
       >
         {element.element}
       </div>
