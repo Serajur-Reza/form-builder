@@ -34,9 +34,16 @@ export const formSlice = createSlice({
       // state.forms = temp
       state.forms = [];
     },
+
+    reorderElements: (state, action) => {
+      const { oldIndex, newIndex } = action.payload;
+      const [removed] = state.forms.splice(oldIndex, 1);
+      state.forms.splice(newIndex, 0, removed);
+    },
   },
 });
 
-export const { addElement, removeElement, clearForm } = formSlice.actions;
+export const { addElement, removeElement, clearForm, reorderElements } =
+  formSlice.actions;
 
 export default formSlice.reducer;
