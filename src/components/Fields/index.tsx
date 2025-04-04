@@ -16,7 +16,7 @@ const Fields = () => {
 
   // console.log(elements);
   return (
-    <div className={"bg-white border-1 rounded-md p-4  m-2 overflow-auto"}>
+    <div className={"bg-white p-4  m-2 overflow-auto"}>
       <div className={"m-2"}>
         {/*<div>*/}
         {/*  <h1 className={'text-2xl  m-2 font-bold'} >Fields</h1>*/}
@@ -40,7 +40,9 @@ const Fields = () => {
                 <SortableContext items={elements.map((el) => el.id)}>
                   {elements?.length ? (
                     elements?.map((el, i) => (
-                      <SortableItem element={el} id={el.uid} index={i} />
+                      <div className="cursor-pointer">
+                        <SortableItem element={el} id={el.uid} index={i} />
+                      </div>
                     ))
                   ) : (
                     <div className="text-center">Drag and Drop Items here</div>

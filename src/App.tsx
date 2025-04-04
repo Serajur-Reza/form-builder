@@ -1,9 +1,8 @@
 import "./App.css";
-// import Code from "./components/Code";
 import Elements from "./components/Elements";
 import Fields from "./components/Fields";
 import { useState } from "react";
-import { closestCenter, DndContext, DragOverlay } from "@dnd-kit/core";
+import { DndContext, DragOverlay } from "@dnd-kit/core";
 import { useAppDispatch, useAppSelector } from "./store/hooks.ts";
 import { addElement, reorderElements } from "./store/Form/formSlice.ts";
 import { nanoid } from "@reduxjs/toolkit";
@@ -71,11 +70,16 @@ function App() {
         onDragEnd={handleDragEnd}
       >
         <div className="font-bold  mt-4">
-          <h1 className="text-3xl text-center">Form Builder</h1>
+          <h1 className="text-3xl text-center underline">Form Builder</h1>
 
-          <div className="grid grid-cols-2 gap-4 m-4">
-            <Elements />
-            <Fields />
+          <div className="grid grid-cols-3 gap-4 m-4">
+            <div className="col-span-1">
+              <Elements />
+            </div>
+
+            <div className="col-span-2">
+              <Fields />
+            </div>
 
             <DragOverlay>
               {activeElement ? (

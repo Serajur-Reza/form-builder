@@ -25,9 +25,9 @@ export const SortableItem = (props) => {
   const style = {
     transform: CSS.Transform.toString(transform),
     transition: transition || "all 0.3s ease",
-    // opacity: isDragging ? 0.5 : 1,
-    // zIndex: isDragging ? 1 : 0,
-    // boxShadow: isDragging ? "0 0 10px rgba(0,0,0,0.3)" : "none",
+    opacity: isDragging ? 0.5 : 1,
+    zIndex: isDragging ? 1 : 0,
+    boxShadow: isDragging ? "0 0 10px rgba(0,0,0,0.3)" : "none",
   };
 
   //   const handleRemove = () => {
@@ -37,11 +37,12 @@ export const SortableItem = (props) => {
   return (
     <div
       className={
-        "grid grid-cols-12 gap-4 flex items-center justify-center  my-4 rounded-md px-4 "
+        "grid grid-cols-12 gap-4 flex items-center justify-center  my-4 rounded-md px-4 cursor-pointer"
       }
       key={id}
       ref={setNodeRef}
       style={{
+        cursor: "pointer",
         ...style,
       }}
       {...attributes}
@@ -57,12 +58,13 @@ export const SortableItem = (props) => {
             height: "2px",
             backgroundColor: "#4285f4",
             zIndex: 1,
+            cursor: "pointer",
           }}
         />
       )}
       <div
         className={
-          "col-span-11 border-1 border-dashed rounded-md bg-gray-100  my-4 rounded-md cursor-pointer"
+          "col-span-11 border-1 border-dashed rounded-md bg-gray-100  my-4 px-4 py-2 rounded-md cursor-pointer"
         }
         {...listeners}
         // style={{
@@ -73,7 +75,7 @@ export const SortableItem = (props) => {
       </div>
       <button
         className={
-          "col-span-1 border-1 h-[50px] rounded-md  my-4 cursor-pointer"
+          "col-span-1 border-1 h-[50px] rounded-md  my-4 cursor-pointer "
         }
         onClick={() => dispatch(removeElement(index))}
       >
@@ -90,6 +92,7 @@ export const SortableItem = (props) => {
             height: "2px",
             backgroundColor: "#4285f4",
             zIndex: 1,
+            cursor: "pointer",
           }}
         />
       )}

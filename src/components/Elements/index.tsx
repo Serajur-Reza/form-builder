@@ -12,16 +12,15 @@ const Elements = () => {
       {/*  <div className="bg-gray-300 p-4 m-2">{item}</div>*/}
       {/*))}*/}
 
-      <div>
-        {formElementSidebar.map((formElement, index) => (
-          <SidebarButtonElement
-            formElement={formElement.element}
-            name={formElement.name}
-            id={formElement.id}
-            code={formElement?.code}
-          />
-        ))}
-      </div>
+      {formElementSidebar.map((formElement, index) => (
+        <SidebarButtonElement
+          formElement={formElement.element}
+          name={formElement.name}
+          id={formElement.id}
+          code={formElement?.code}
+          icon={formElement?.icon}
+        />
+      ))}
     </div>
   );
 };

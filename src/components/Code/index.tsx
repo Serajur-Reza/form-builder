@@ -1,7 +1,6 @@
 import { useAppSelector } from "@/store/hooks.ts";
 import { useEffect, useState } from "react";
-import prettier from "prettier/standalone";
-import parserHtml from "prettier/plugins/html";
+import { FaClipboardCheck } from "react-icons/fa";
 
 const Code = () => {
   const elements = useAppSelector((state) => state.form.forms);
@@ -41,7 +40,7 @@ const Code = () => {
           onClick={copyToClipboard}
           className={"bg-black text-white text-md rounded-md p-3 mt-4"}
         >
-          Copy to Clipboard
+          <FaClipboardCheck />
         </button>
       </div>
 
